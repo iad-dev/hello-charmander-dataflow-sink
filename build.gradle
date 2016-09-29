@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.4.1.RELEASE'
+		springBootVersion = '1.4.0.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -16,7 +16,7 @@ apply plugin: 'spring-boot'
 
 jar {
 	baseName = 'hello-charmander'
-	version = '0.0.1-SNAPSHOT'
+	version = '0.0.3-SNAPSHOT'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -30,12 +30,14 @@ repositories {
 
 dependencies {
 	compile('org.springframework.cloud.stream.app:spring-cloud-starter-stream-sink-log')
-	testCompile('org.springframework.boot:spring-boot-starter-test') 
+	compile('org.springframework.cloud:spring-cloud-stream-binder-rabbit')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 dependencyManagement {
 	imports { 
-		mavenBom "org.springframework.cloud.stream.app:spring-cloud-stream-app-dependencies:1.0.2.RELEASE" 
+		mavenBom "org.springframework.cloud.stream.app:spring-cloud-stream-app-dependencies:1.0.2.RELEASE"
+		mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
 	}
 }
 
