@@ -6,7 +6,7 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
 }
 
@@ -16,7 +16,7 @@ apply plugin: 'spring-boot'
 
 jar {
 	baseName = 'hello-charmander'
-	version = '0.0.3-SNAPSHOT'
+	version = '0.0.4-SNAPSHOT'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

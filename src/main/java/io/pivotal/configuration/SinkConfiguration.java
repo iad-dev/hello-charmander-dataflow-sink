@@ -11,7 +11,7 @@ public class SinkConfiguration {
     private static final Log logger = LogFactory.getLog(SinkConfiguration.class);
 
     @ServiceActivator(inputChannel=Sink.INPUT)
-    public void loggerSink(Object payload) {
+    public void loggerSink(String payload) {
         logger.info("Hello, Charmander. The time is: " + payload);
     }
 }
